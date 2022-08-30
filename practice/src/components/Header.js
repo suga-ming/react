@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../logo.svg";
 
-export default function Header() {
+const Header = (props) => {
   return (
     <header className="App-header" tabIndex="0">
       <img src={logo} className="App-logo" alt="logo" />
@@ -14,8 +14,10 @@ export default function Header() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        react!
+        {props.title}
       </a>
     </header>
   );
-}
+};
+
+export default Header;
