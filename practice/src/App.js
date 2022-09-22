@@ -36,7 +36,7 @@ function App() {
       {/* <Random /> */}
 
       {cards.length > 0 && <button onClick={pick}>추첨하기</button>}
-      {/* <BusinessCard /> */}
+      <BusinessCard pickde={info} />
     </div>
   );
 }
