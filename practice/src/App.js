@@ -8,6 +8,7 @@ import Calculator from "./components/Calculator";
 import Clock from "./components/Clock";
 import FunctionClock from "./components/FunctionClock";
 import Random from "./components/Random";
+import Banner from "./components/Banner";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -28,11 +29,15 @@ function App() {
     setPicked([...picked, randomItem]);
   }
 
-  console.log(picked);
-
   useEffect(() => {
     setCards(datas);
   }, []);
+
+  const result = picked.map((pick) => (
+    <BusinessCard info={pick} key={pick.phoneNumber} />
+  ));
+
+  console.log(result);
 
   return (
     <div className="App">
@@ -41,8 +46,10 @@ function App() {
       {/* <FunctionClock /> */}
       {/* <Random /> */}
 
-      {cards.length > 0 && <button onClick={Pick}>추첨하기</button>}
-      {picked.length > 0 && <BusinessCard info={picked[picked.length - 1]} />}
+      {/* {cards.length > 0 && <button onClick={Pick}>추첨하기</button>} */}
+      {/* {picked.length > 0 && <BusinessCard info={picked[picked.length - 1]} />} */}
+      {/* {picked.length > 0 && result} */}
+      {<Banner />}
     </div>
   );
 }
