@@ -13,7 +13,14 @@ function App() {
   const [cards, setCards] = useState([]);
   const [picked, setPicked] = useState([]);
 
-  function pick() {
+  function Pick() {
+    if (picked.length > 2) {
+      const names = picked.reduce((acc, cur) => {
+        return (acc = acc.concat(`${cur.name}, `));
+      }, "");
+      return alert(`당첨 완료 ${names} 입니다.`);
+    }
+
     const randomIdx = Math.floor(Math.random() * cards.length);
     const randomItem = cards[randomIdx];
 
@@ -21,12 +28,11 @@ function App() {
     setPicked([...picked, randomItem]);
   }
 
+  console.log(picked);
+
   useEffect(() => {
     setCards(datas);
   }, []);
-
-  console.log(cards);
-  console.log(picked);
 
   return (
     <div className="App">
@@ -35,8 +41,8 @@ function App() {
       {/* <FunctionClock /> */}
       {/* <Random /> */}
 
-      {cards.length > 0 && <button onClick={pick}>추첨하기</button>}
-      <BusinessCard pickde={info} />
+      {cards.length > 0 && <button onClick={Pick}>추첨하기</button>}
+      {picked.length > 0 && <BusinessCard info={picked[picked.length - 1]} />}
     </div>
   );
 }
