@@ -13,35 +13,36 @@ import SimpleForm from "./components/SimpleForm";
 import UnControlledForm from "./components/UnControlledForm";
 import CatParent from "./components/CatParent";
 import ToDoList from "./ToDoList";
+import ToDo from "./components/ToDo";
 
 function App() {
-  const [cards, setCards] = useState([]);
-  const [picked, setPicked] = useState([]);
+  // const [cards, setCards] = useState([]);
+  // const [picked, setPicked] = useState([]);
 
-  function Pick() {
-    if (picked.length > 2) {
-      const names = picked.reduce((acc, cur) => {
-        return (acc = acc.concat(`${cur.name}, `));
-      }, "");
-      return alert(`당첨 완료 ${names} 입니다.`);
-    }
+  // function Pick() {
+  //   if (picked.length > 2) {
+  //     const names = picked.reduce((acc, cur) => {
+  //       return (acc = acc.concat(`${cur.name}, `));
+  //     }, "");
+  //     return alert(`당첨 완료 ${names} 입니다.`);
+  //   }
 
-    const randomIdx = Math.floor(Math.random() * cards.length);
-    const randomItem = cards[randomIdx];
+  //   const randomIdx = Math.floor(Math.random() * cards.length);
+  //   const randomItem = cards[randomIdx];
 
-    setCards(cards.filter((c) => c.phoneNumber !== randomItem.phoneNumber));
-    setPicked([...picked, randomItem]);
-  }
+  //   setCards(cards.filter((c) => c.phoneNumber !== randomItem.phoneNumber));
+  //   setPicked([...picked, randomItem]);
+  // }
 
-  useEffect(() => {
-    setCards(datas);
-  }, []);
+  // useEffect(() => {
+  //   setCards(datas);
+  // }, []);
 
-  const result = picked.map((pick) => (
-    <BusinessCard info={pick} key={pick.phoneNumber} />
-  ));
+  // const result = picked.map((pick) => (
+  //   <BusinessCard info={pick} key={pick.phoneNumber} />
+  // ));
 
-  console.log(result);
+  // console.log(result);
 
   return (
     <div className="App">
@@ -57,7 +58,8 @@ function App() {
       {/* <SimpleForm /> */}
       {/* <UnControlledForm /> */}
       {/* <CatParent /> */}
-      <ToDoList />
+      {/* <ToDoList /> */}
+      <ToDo />
     </div>
   );
 }
