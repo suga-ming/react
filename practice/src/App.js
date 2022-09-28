@@ -9,6 +9,10 @@ import Clock from "./components/Clock";
 import FunctionClock from "./components/FunctionClock";
 import Random from "./components/Random";
 import Banner from "./components/Banner";
+import SimpleForm from "./components/SimpleForm";
+import UnControlledForm from "./components/UnControlledForm";
+import CatParent from "./components/CatParent";
+import ToDoList from "./ToDoList";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -49,7 +53,11 @@ function App() {
       {/* {cards.length > 0 && <button onClick={Pick}>추첨하기</button>} */}
       {/* {picked.length > 0 && <BusinessCard info={picked[picked.length - 1]} />} */}
       {/* {picked.length > 0 && result} */}
-      {<Banner />}
+      {/* {<Banner />} */}
+      {/* <SimpleForm /> */}
+      {/* <UnControlledForm /> */}
+      {/* <CatParent /> */}
+      <ToDoList />
     </div>
   );
 }
