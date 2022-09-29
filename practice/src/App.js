@@ -14,6 +14,7 @@ import UnControlledForm from "./components/UnControlledForm";
 import CatParent from "./components/CatParent";
 import ToDoList from "./ToDoList";
 import ToDo from "./components/ToDo";
+import OnlineStore from "./components/8/OnlineStore";
 
 function App() {
   // const [cards, setCards] = useState([]);
@@ -59,7 +60,8 @@ function App() {
       {/* <UnControlledForm /> */}
       {/* <CatParent /> */}
       {/* <ToDoList /> */}
-      <ToDo />
+      {/* <ToDo /> */}
+      <OnlineStore />
     </div>
   );
 }
